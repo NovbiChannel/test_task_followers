@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_userSearchFragment_to_userDetailFragment"
             app:destination="@id/userDetailFragment" />
+        <action
+            android:id="@+id/action_userSearchFragment_to_authFragment"
+            app:destination="@id/authFragment" />
     </fragment>
     <fragment
         android:id="@+id/userDetailFragment"
@@ -18,6 +21,17 @@
         android:label="UserDetailFragment" >
         <action
             android:id="@+id/action_userDetailFragment_to_userSearchFragment"
+            app:destination="@id/userSearchFragment" />
+        <argument
+            android:name="User"
+            app:argType="com.example.test_task_followers.data.models.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.test_task_followers.ui.fragments.AuthFragment"
+        android:label="AuthFragment" >
+        <action
+            android:id="@+id/action_authFragment_to_userSearchFragment"
             app:destination="@id/userSearchFragment" />
     </fragment>
 </navigation>

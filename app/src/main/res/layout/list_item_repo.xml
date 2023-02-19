@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/tv_repo_name"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -28,6 +29,7 @@
                 android:textSize="21dp"
                 android:textAlignment="viewStart"/>
             <TextView
+                android:id="@+id/tv_repo_visibility"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -36,22 +38,31 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_repo_link"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="https://github.com/NovbiChannel/Login-Page"
             android:textSize="12dp"
             android:textColor="@color/link"/>
         <TextView
+            android:id="@+id/tv_repo_description"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="User registration and authorization page for using the service."/>
+        <TextView
+            android:id="@+id/tv_pushed_at"
+            android:layout_marginTop="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2023-01-31T14:00:36Z"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="4dp">
             <TextView
+                android:id="@+id/tv_repo_language"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -68,6 +79,7 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
                     <TextView
+                        android:id="@+id/tv_forks"
                         android:layout_marginEnd="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -84,6 +96,7 @@
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
                     <TextView
+                        android:id="@+id/tv_stars"
                         android:layout_marginEnd="4dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
