@@ -65,6 +65,7 @@
             android:src="@drawable/baseline_account_circle_24" />
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_user"
         android:paddingVertical="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
