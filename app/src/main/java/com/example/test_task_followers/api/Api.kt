@@ -9,19 +9,19 @@ import retrofit2.http.Query
 
 interface Api {
     @GET("search/users")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getSearchUsers(
         @Query("q") query: String
     ): Call<UserResponse>
 
     @GET("users/{username}")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getUserDetail(
         @Path("username") username: String
     ): Call<DetailUserResponce>
 
     @GET("users/{username}/repos")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getReposUser(
         @Path("username") username: String
     ): Call<ArrayList<ReposUserResponce>>
@@ -33,7 +33,7 @@ interface Api {
 //    ) : Call <ArrayList<TestItem>>
 
     @GET("users")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getAllUser(
         @Query("since") since: Int = 0,
         @Query("per_page") perPage: Int = 50

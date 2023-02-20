@@ -2,6 +2,7 @@ package com.example.test_task_followers.ui.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -12,7 +13,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.test_task_followers.R
 import com.example.test_task_followers.adapters.UserAdapter
+import com.example.test_task_followers.data.auth.TokenStorage
+import com.example.test_task_followers.data.models.RemoteGithubUser
 import com.example.test_task_followers.databinding.FragmentUserSearchBinding
+import com.example.test_task_followers.ui.viewmodels.DetailUserViewModel
 import com.example.test_task_followers.ui.viewmodels.MainViewModel
 
 @Suppress("LABEL_NAME_CLASH")
@@ -20,6 +24,8 @@ class UserSearchFragment: Fragment() {
 
     private var _binding: FragmentUserSearchBinding? = null
     private val binding get() = _binding!!
+
+    private val authToken = TokenStorage.accessToken
 
     private val viewModel by viewModels<MainViewModel>()
 
@@ -63,7 +69,11 @@ class UserSearchFragment: Fragment() {
 
 
         binding.myProfileButton.setOnClickListener {
-            findNavController().navigate(R.id.action_userSearchFragment_to_authFragment)
+            if (authToken == null) {
+                findNavController().navigate(R.id.action_userSearchFragment_to_authFragment)
+            } else {
+                findNavController().navigate(R.id.action_userSearchFragment_to_userInfoFragment)
+            }
         }
 
         binding.clearButton.setOnClickListener {

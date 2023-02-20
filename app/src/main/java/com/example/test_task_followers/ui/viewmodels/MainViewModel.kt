@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.test_task_followers.api.RetrofitClient
+import com.example.test_task_followers.data.auth.AuthRepository
 import com.example.test_task_followers.data.models.User
 import com.example.test_task_followers.data.models.UserResponse
 import retrofit2.Call
@@ -18,6 +19,7 @@ class MainViewModel : ViewModel() {
     init {
         setAllUsers()
         getAllUsers()
+        Log.d("MyLog", "${listUsers.value.toString()}")
     }
 
     fun setSearchUsers(query: String) {
