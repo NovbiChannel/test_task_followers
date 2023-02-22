@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5">
+        app:layout_constraintHorizontal_bias="0.5"
+        >
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_user"
@@ -33,21 +34,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Nikita Chaglov   NovbiChannel"
+            tools:text="Nikita Chaglov"
             android:textColor="@color/white"
             android:layout_marginBottom="4dp"
-            android:textSize="21dp"/>
+            android:textSize="21sp"/>
 
         <TextView
             android:id="@+id/tv_user_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Здравствуйте, меня зовут Никита! Я разработчик Android kotlin."
+            tools:text="Здравствуйте, меня зовут Никита! Я разработчик Android kotlin."
             android:textColor="@color/white"
             android:layout_marginBottom="16dp"
             android:textAlignment="center"
-            android:textSize="16dp"/>
+            android:textSize="16sp"/>
         
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,15 +66,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Подписчиков"
-                    android:textSize="16dp"
+                    android:text="@string/followers"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="4dp"/>
                 <TextView
                     android:id="@+id/tv_followers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    tools:text="0"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -86,15 +87,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Подписок"
-                    android:textSize="16dp"
+                    android:text="@string/following"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="4dp"/>
                 <TextView
                     android:id="@+id/tv_following"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    tools:text="0"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -107,15 +108,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Репозиторий"
-                    android:textSize="16dp"
+                    android:text="@string/repos"
+                    android:textSize="16sp"
                     android:textColor="@color/black"
                     android:layout_marginBottom="4dp"/>
                 <TextView
                     android:id="@+id/tv_repo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="0"
+                    tools:text="0"
                     android:textColor="@color/black"
                     android:textStyle="bold"/>
             </LinearLayout>
@@ -123,7 +124,6 @@
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_repo"
-        android:paddingVertical="8dp"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,6 +133,44 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/list_item_repo"
         tools:itemCount="10"
+        />
+
+    <LinearLayout
+        android:id="@+id/ll_no_repo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_main"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/git_hub"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/main"
+            android:text="@string/repo_list_is_empty"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rv_repo"
+        android:visibility="gone"
         />
 
     <ImageButton

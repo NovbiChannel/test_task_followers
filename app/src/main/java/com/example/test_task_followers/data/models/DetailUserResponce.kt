@@ -9,4 +9,5 @@ data class DetailUserResponce (
     val public_repos: Int,
     val followers: Int,
     val following: Int,
+    val login: String
         )

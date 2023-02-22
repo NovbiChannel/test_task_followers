@@ -1,4 +1,4 @@
-package com.example.test_task_followers.repository
+package com.example.test_task_followers.network.repository
 
 import com.example.test_task_followers.data.models.RemoteGithubUser
 import com.example.test_task_followers.network.Networking

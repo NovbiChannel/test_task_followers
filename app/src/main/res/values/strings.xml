@@ -1,9 +1,17 @@
 <resources>
-    <string name="app_name">Test_task_followers</string>
+    <string name="app_name">Git Hub User Search</string>
     <string name="auth_login">Войти</string>
     <string name="auth_canceled">Аутентификация не выполнена</string>
     <string name="corrupt_access_token">Corrupt access token</string>
     <string name="get_user_info">Get user info</string>
     <string name="get_user_error">Get user error</string>
     <string name="logout">logout</string>
+    <string name="followers">Подписчиков</string>
+    <string name="following">Подписок</string>
+    <string name="repos">Репозиторий</string>
+    <string name="search_user">Поиск пользователя</string>
+    <string name="auth">Авторизация</string>
+    <string name="repo_list_is_empty">Список репозиториев \nэтого пользователя пуст</string>
+    <string name="your_repos_is_empty">Ваш список репозиториев пуст</string>
+    <string name="search_failed">Пользователя с таким логином \nне существует</string>
 </resources>

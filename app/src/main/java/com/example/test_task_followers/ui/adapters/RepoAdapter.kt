@@ -1,9 +1,17 @@
-package com.example.test_task_followers.adapters
+package com.example.test_task_followers.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.webkit.URLUtil
+import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +19,7 @@ import com.example.test_task_followers.data.models.ReposUserResponce
 import com.example.test_task_followers.databinding.ListItemRepoBinding
 import com.example.test_task_followers.other.Constants.DateFormat.FORMAT_DATE_DD_MM_YYYY
 import com.example.test_task_followers.other.Constants.DateFormat.FORMAT_DATE_TIMEZONE
+import com.example.test_task_followers.ui.fragments.UserDetailFragment
 import java.text.SimpleDateFormat
 
 class RepoAdapter : ListAdapter<ReposUserResponce, RepoAdapter.RepoViewHolder>(DiffCallback) {
@@ -34,6 +43,9 @@ class RepoAdapter : ListAdapter<ReposUserResponce, RepoAdapter.RepoViewHolder>(D
                     tvRepoName.text = data.name
                     tvRepoLink.text = data.html_url
                     tvRepoDescription.text = data.description
+                    if (tvRepoDescription.text.isEmpty()) {
+                        tvRepoDescription.visibility = View.GONE
+                    }
                     tvRepoLanguage.text = data.language
                     tvRepoVisibility.text = data.visibility
                     tvForks.text = data.forks.toString()

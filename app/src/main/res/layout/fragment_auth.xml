@@ -21,7 +21,7 @@
         android:id="@+id/loginButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Авторизация"
+        android:text="@string/auth"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:background="@drawable/button_shape"

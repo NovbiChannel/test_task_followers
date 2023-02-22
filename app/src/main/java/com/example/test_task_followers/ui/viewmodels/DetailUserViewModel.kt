@@ -4,12 +4,15 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.test_task_followers.api.RetrofitClient
+import com.example.test_task_followers.data.api.RetrofitClient
 import com.example.test_task_followers.data.models.DetailUserResponce
 import com.example.test_task_followers.data.models.ReposUserResponce
+import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.sql.Time
+import java.util.concurrent.TimeUnit
 
 class DetailUserViewModel: ViewModel() {
     val user = MutableLiveData<DetailUserResponce>()

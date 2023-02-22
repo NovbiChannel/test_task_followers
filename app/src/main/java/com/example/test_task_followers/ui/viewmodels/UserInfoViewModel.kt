@@ -8,7 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.test_task_followers.R
 import com.example.test_task_followers.data.auth.AuthRepository
 import com.example.test_task_followers.data.models.RemoteGithubUser
-import com.example.test_task_followers.repository.UserRepository
+import com.example.test_task_followers.network.repository.UserRepository
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.trySendBlocking
 import kotlinx.coroutines.flow.Flow
@@ -30,6 +30,7 @@ class UserInfoViewModel(application: Application): AndroidViewModel(application)
     private val toastEventChannel = Channel<Int>(Channel.BUFFERED)
     private val logoutPageEventChannel = Channel<Intent>(Channel.BUFFERED)
     private val logoutCompletedEventChannel = Channel<Unit>(Channel.BUFFERED)
+
 
 
     init {

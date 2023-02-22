@@ -1,74 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="#ffffff"
     >
-    
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:orientation="horizontal"
-        android:paddingHorizontal="8dp"
-        android:background="@color/main"
-        android:gravity="center_vertical">
-        
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
+            android:id="@+id/ll_header"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:orientation="horizontal"
-            android:paddingHorizontal="8dp"
-            android:background="@drawable/search_shape"
+            android:layout_height="69dp"
+            android:background="@color/main"
             android:gravity="center_vertical"
-            android:layout_weight="30">
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/baseline_person_search_24"
-                android:layout_weight="1"
-                />
-
-            <EditText
-                android:id="@+id/ed_user_search"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="35dp"
                 android:layout_weight="30"
-                android:background="@color/white"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:paddingHorizontal="4dp"
-                android:hint="Поиск пользователя"
-                android:textColorHint="@color/black"
-                />
+                android:background="@drawable/search_shape"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
 
-            <ImageButton
-                android:id="@+id/clear_button"
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/baseline_person_search_24"
+                    tools:ignore="NestedWeights" />
+
+                <EditText
+                    android:id="@+id/ed_user_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:background="#00000000"
+                    android:hint="@string/search_user"
+                    android:inputType="text"
+                    android:paddingHorizontal="4dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint" />
+
+                <ImageButton
+                    android:id="@+id/clear_button"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:src="@drawable/baseline_clear_24"
+                    />
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/my_profile_button"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@drawable/baseline_clear_24"
-                android:background="#00000000"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                />
+                android:background="#00000000"
+                android:src="@drawable/baseline_account_circle_24"
+                app:civ_border_color="@color/link"
+                app:civ_border_width="1dp" />
         </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/my_profile_button"
-            android:layout_marginStart="8dp"
-            android:layout_weight="1"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="#00000000"
-            android:src="@drawable/baseline_account_circle_24" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_item_user" />
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_user"
-        android:paddingVertical="8dp"
+
+    <LinearLayout
+        android:id="@+id/ll_no_user"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/list_item_user"/>
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/git_hub"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/main"
+            android:text="@string/search_failed"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
