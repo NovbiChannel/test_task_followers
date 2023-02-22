@@ -1,7 +1,7 @@
 package com.example.test_task_followers.network
 
 import android.content.Context
-import com.example.test_task_followers.api.Api
+import com.example.test_task_followers.data.api.Api
 import com.example.test_task_followers.data.auth.TokenStorage
 import net.openid.appauth.AuthorizationService
 import okhttp3.OkHttpClient

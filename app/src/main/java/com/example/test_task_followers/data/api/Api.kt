@@ -1,4 +1,4 @@
-package com.example.test_task_followers.api
+package com.example.test_task_followers.data.api
 
 import com.example.test_task_followers.data.models.*
 import retrofit2.Call
@@ -9,34 +9,27 @@ import retrofit2.http.Query
 
 interface Api {
     @GET("search/users")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getSearchUsers(
         @Query("q") query: String
     ): Call<UserResponse>
 
     @GET("users/{username}")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getUserDetail(
-        @Path("username") username: String
+        @Path("username") username: String,
     ): Call<DetailUserResponce>
 
     @GET("users/{username}/repos")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getReposUser(
         @Path("username") username: String
     ): Call<ArrayList<ReposUserResponce>>
 
-//    @GET("users/{username}/followers")
-//    @Headers("Authorization: token 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")
-//    fun getFollowersCount(
-//        @Path("username") username: String
-//    ) : Call <ArrayList<TestItem>>
-
     @GET("users")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun getAllUser(
         @Query("since") since: Int = 0,
-        @Query("per_page") perPage: Int = 50
     ): Call<ArrayList<User>>
 
     @GET("user")

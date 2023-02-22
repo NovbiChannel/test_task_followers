@@ -4,7 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.test_task_followers.api.RetrofitClient
+import com.example.test_task_followers.data.api.RetrofitClient
+import com.example.test_task_followers.data.models.DetailUserResponce
 import com.example.test_task_followers.data.models.User
 import com.example.test_task_followers.data.models.UserResponse
 import retrofit2.Call
@@ -60,33 +61,9 @@ class MainViewModel : ViewModel() {
 
             })
     }
-
-//    fun setFollowerCount(username: String) {
-//        RetrofitClient.apiInstance
-//            .getFollowersCount(username)
-//            .enqueue(object : Callback<ArrayList<TestItem>>{
-//                override fun onResponse(
-//                    call: Call<ArrayList<TestItem>>,
-//                    response: Response<ArrayList<TestItem>>
-//                ) {
-//                    if (response.isSuccessful) {
-//                        listFollowers.postValue(response.body())
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<ArrayList<TestItem>>, t: Throwable) {
-//                    Log.d("MyTag", t.message.toString())
-//                }
-//            })
-//    }
-
     fun getSearchUsers(): LiveData<ArrayList<User>>{
         return listUsers
     }
     private fun getAllUsers(): LiveData<ArrayList<User>> {
         return listUsers
-    }
-//    fun getFollowerCount(): LiveData<ArrayList<TestItem>> {
-//        return listFollowers
-//    }
-}
+    }}

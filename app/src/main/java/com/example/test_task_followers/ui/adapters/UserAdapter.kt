@@ -1,8 +1,7 @@
-package com.example.test_task_followers.adapters
+package com.example.test_task_followers.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -44,7 +43,7 @@ class UserAdapter(private val clickListener: (User) -> Unit) :
     companion object DiffCallback: DiffUtil.ItemCallback<User>(){
 
         override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
-            return (oldItem.id == newItem.id && oldItem.followers_url == newItem.followers_url
+            return (oldItem.id == newItem.id
                     && oldItem.login == newItem.login && oldItem.avatar_url == newItem.avatar_url &&
                     oldItem.followers == newItem.followers)
         }

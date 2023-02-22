@@ -4,6 +4,5 @@ data class User(
     val login: String,
     val id: Int,
     val avatar_url: String,
-    val followers_url: String,
     var followers: Int,
-) : java.io.Serializable
+): java.io.Serializable
