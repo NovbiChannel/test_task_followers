@@ -1,10 +1,10 @@
 # Git Hub User Search
 <p>A simple application for finding users of the Git Hub information platform, based on the MVVM architecture.</p>
 <p>
-<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fsplash.jpg?alt=media&token=ec572a90-0ed7-42a9-a420-42ad1dd2c6f5" alt="Splash Screen" width="25%">
-<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fuser_search_main.jpg?alt=media&token=8180c627-7267-4137-adc5-390e659d5537" alt="Search main screen" width="25%">
-<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fuser_search.jpg?alt=media&token=ff9d4fc0-177e-490b-a5c1-8d8f0f82cd19" alt="Search user name" width="25%">
-<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fuser_detail.jpg?alt=media&token=c3e648f2-5f00-44ca-8b0e-104412c2cdad" alt="User Detai Screen" width="25%">
+<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fsplash.jpg?alt=media&token=ec572a90-0ed7-42a9-a420-42ad1dd2c6f5" alt="Splash Screen" width="23%">
+<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fuser_search_main.jpg?alt=media&token=8180c627-7267-4137-adc5-390e659d5537" alt="Search main screen" width="23%">
+<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fuser_search.jpg?alt=media&token=ff9d4fc0-177e-490b-a5c1-8d8f0f82cd19" alt="Search user name" width="23%">
+<img src="https://firebasestorage.googleapis.com/v0/b/spotifyclonetest-68b4a.appspot.com/o/image_for_project%2FGHUS%2Fuser_detail.jpg?alt=media&token=c3e648f2-5f00-44ca-8b0e-104412c2cdad" alt="User Detai Screen" width="23%">
 </p>
 
 # DEVELOPMENT TIME
