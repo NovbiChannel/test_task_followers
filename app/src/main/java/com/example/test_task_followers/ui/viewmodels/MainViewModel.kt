@@ -5,9 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.test_task_followers.data.api.RetrofitClient
-import com.example.test_task_followers.data.models.DetailUserResponce
 import com.example.test_task_followers.data.models.User
 import com.example.test_task_followers.data.models.UserResponse
+import com.example.test_task_followers.other.Constants.VALID_TOKEN
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +23,7 @@ class MainViewModel : ViewModel() {
 
     fun setSearchUsers(query: String) {
         RetrofitClient.apiInstance
-            .getSearchUsers(query)
+            .getSearchUsers(query, "token $VALID_TOKEN")
             .enqueue(object  : Callback<UserResponse>{
                 override fun onResponse(
                     call: Call<UserResponse>,
@@ -40,10 +40,9 @@ class MainViewModel : ViewModel() {
 
             })
     }
-
     private fun setAllUsers() {
         RetrofitClient.apiInstance
-            .getAllUser()
+            .getAllUser(0,"token $VALID_TOKEN")
             .enqueue(object : Callback<ArrayList<User>>{
                 override fun onResponse(
                     call: Call<ArrayList<User>>,

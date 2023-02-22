@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import com.example.test_task_followers.data.api.RetrofitClient
 import com.example.test_task_followers.data.models.DetailUserResponce
 import com.example.test_task_followers.data.models.ReposUserResponce
+import com.example.test_task_followers.other.Constants
+import com.example.test_task_followers.other.Constants.VALID_TOKEN
 import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -20,7 +22,7 @@ class DetailUserViewModel: ViewModel() {
 
     fun setUserDetail(username: String) {
         RetrofitClient.apiInstance
-            .getUserDetail(username)
+            .getUserDetail(username, "token ${VALID_TOKEN}")
             .enqueue(object : Callback<DetailUserResponce>{
                 override fun onResponse(
                     call: Call<DetailUserResponce>,
@@ -42,7 +44,7 @@ class DetailUserViewModel: ViewModel() {
 
     fun setReposUser(username: String) {
         RetrofitClient.apiInstance
-            .getReposUser(username)
+            .getReposUser(username, "token ${VALID_TOKEN}")
             .enqueue(object : Callback<ArrayList<ReposUserResponce>>{
                 override fun onResponse(
                     call: Call<ArrayList<ReposUserResponce>>,

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.test_task_followers.R
+import com.example.test_task_followers.data.auth.TokenStorage
 import com.example.test_task_followers.ui.adapters.UserAdapter
 import com.example.test_task_followers.databinding.FragmentUserSearchBinding
 import com.example.test_task_followers.other.Constants.AVATAR_URL
@@ -22,6 +23,7 @@ import com.example.test_task_followers.other.Constants.FOLLOWING_TAG
 import com.example.test_task_followers.other.Constants.LOGIN_TAG
 import com.example.test_task_followers.other.Constants.NAME_TAG
 import com.example.test_task_followers.other.Constants.REPO_TAG
+import com.example.test_task_followers.other.Constants.TOKEN
 import com.example.test_task_followers.ui.viewmodels.DetailUserViewModel
 import com.example.test_task_followers.ui.viewmodels.MainViewModel
 import com.example.test_task_followers.ui.viewmodels.UserInfoViewModel
@@ -36,6 +38,7 @@ class UserSearchFragment: Fragment() {
     private val viewModel by viewModels<MainViewModel>()
     private val vieModelU by viewModels<UserInfoViewModel>()
     private val vieModelD by viewModels<DetailUserViewModel>()
+    private val token = TokenStorage.accessToken
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -75,7 +78,6 @@ class UserSearchFragment: Fragment() {
             }
         }
         val userLogin = sharedPreference.getString(LOGIN_TAG, null)
-
 
         if (userLogin == null) {
             binding.myProfileButton.setOnClickListener {
