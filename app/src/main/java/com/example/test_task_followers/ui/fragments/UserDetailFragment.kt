@@ -76,6 +76,7 @@ class UserDetailFragment: Fragment() {
             if (it.isEmpty()) {
                 binding.rvRepo.visibility = View.GONE
                 binding.llNoRepo.visibility = View.VISIBLE
+                showLoading(false)
             } else {
                 adapter.setData(it)
                 showLoading(false)
