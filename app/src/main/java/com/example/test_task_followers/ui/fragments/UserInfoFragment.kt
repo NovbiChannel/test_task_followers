@@ -92,6 +92,9 @@ class UserInfoFragment: Fragment(R.layout.fragment_user_info) {
         binding.setting.setOnClickListener {
             showLogoutUserDialog()
         }
+        binding.backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_userInfoFragment_to_userSearchFragment)
+        }
 
         viewModel.logoutPageFlow.launchAndCollectIn(viewLifecycleOwner) {
             logoutResponce.launch(it)
