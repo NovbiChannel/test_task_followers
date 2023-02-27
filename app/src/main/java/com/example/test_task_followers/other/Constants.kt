@@ -14,4 +14,7 @@ object Constants {
     const val FOLLOWERS_TAG = "FOLLOWERS_TAG"
     const val FOLLOWING_TAG = "FOLLOWING_TAG"
     const val REPO_TAG = "REPO_TAG"
+    const val TOKEN = "TOKEN"
+
+    const val VALID_TOKEN = "***"
 }
